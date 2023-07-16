@@ -1,20 +1,32 @@
 package main
 
 import (
+	"log"
+	"mvcsaga/configs"
 	"net/http"
 
 	"github.com/labstack/echo/v4"
 )
 
-type M map[string]interface{}
-
 func main() {
-	r := echo.New()
 
-	r.GET("/", func(ctx echo.Context) error {
+	config, err := configs.LoadConfig(".")
+
+	// handle errors when read environment
+	if err != nil {
+		log.Fatalf("can't load environment app.env: %v", err)
+	}
+
+	e := echo.New()
+
+	e.GET("/config", func(c echo.Context) error {
 		data := "Hello from index page"
-		return ctx.String(http.StatusOK, data)
+		return c.JSON(http.StatusOK, data)
 	})
 
-	r.Start(":9000")
+	// Start the server
+	if err := e.Start(":" + config.AppPort); err != nil {
+		log.Fatalf("Failed to start server: %s", err)
+	}
+
 }
