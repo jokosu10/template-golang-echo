@@ -1,35 +1,37 @@
+# Operating System generated files
 .DS_Store
-app.env
-*.[56789ao]
-*.a[56789o]
-*.so
-*.pyc
 ._*
-.nfs.*
-[56789a].out
 *~
-*.orig
-*.rej
-*.exe
+.nfs.*
+
+# Environment files
+app.env
+
+# Temporary files
+/tmp
+
+# Editor generated files
 .*.swp
+
+# Compiled files and binaries
+*.so
+*.exe
 core
+__debug_bin # Air binary
+
+# Go specific
+*.a[56789o]
 *.cgo*.go
 *.cgo*.c
 _cgo_*
 _obj
 _test
 _testmain.go
-/VERSION.cache
 /bin/
-/build.out
-/doc/articles/wiki/*.bin
-/goinstall.log
-/last-change
-/misc/cgo/life/run.out
-/misc/cgo/stdio/run.out
-/misc/cgo/testso/main
 /pkg/
 /src/*.*/
+
+# Specific Go source files
 /src/cmd/cgo/zdefaultcc.go
 /src/cmd/dist/dist
 /src/cmd/go/internal/cfg/zdefaultcc.go
@@ -39,11 +41,37 @@ _testmain.go
 /src/go/doc/headscan
 /src/runtime/internal/sys/zversion.go
 /src/unicode/maketables
+
+# Cache & Log files
+/VERSION.cache
+/goinstall.log
 /test.out
+
+# Test output
 /test/garbage/*.out
 /test/pass.out
 /test/run.out
 /test/times.out
+
+# Other specific files
+*.[56789ao]
+[56789a].out
+*.orig
+*.rej
+/doc/articles/wiki/*.bin
+/misc/cgo/life/run.out
+/misc/cgo/stdio/run.out
+/misc/cgo/testso/main
+/build.out
+/last-change
+
+# Air live-reloader
+.air
+*.tmp
+# Default binary name for air (change if you've set a different name in .air.toml)
+__debug_bin
+
+# General advice
 # This file includes artifacts of Go build that should not be checked in.
 # For files created by specific development environment (e.g. editor),
 # use alternative ways to exclude files from git.
