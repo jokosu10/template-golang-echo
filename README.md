@@ -47,13 +47,25 @@ A step-by-step guide on setting up the project locally.
 2.  Copy example `env` with the following command.
 
     ```bash
-    cp .app.env.example app.env
+    cp app.env.example app.env
     ```
 
 3.  Write the configuration application in the `app.env` file.
 
-4.  Running this server with the following command.
+4.  Install dependecies Go Modules with the following command.
+
+    ```bash
+    go mod download
+    ```
+
+5.  Running this server with the following command if you install `air` module in your workspace.
 
     ```bash
     air -c air.toml
+    ```
+
+6.  Running this server with the following command.
+
+    ```bash
+    go run main.go
     ```
