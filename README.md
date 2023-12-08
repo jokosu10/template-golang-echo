@@ -55,17 +55,11 @@ A step-by-step guide on setting up the project locally.
 4.  Install dependecies Go Modules with the following command.
 
     ```bash
-    go mod download
+    go mod tidy
     ```
 
-5.  Running this server with the following command if you install `air` module in your workspace.
+5.  Running this server with the following command for **Development Mode ONLY**.
 
     ```bash
-    air -c air.toml
-    ```
-
-6.  Running this server with the following command.
-
-    ```bash
-    go run main.go
+    air -c .air.toml
     ```
